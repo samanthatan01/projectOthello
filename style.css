@@ -1,0 +1,115 @@
+.container {
+  position: relative;
+  top: 100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.blackBackground {
+  display: flex;
+  flex-wrap: wrap;
+  grid-column: 2/4;
+  align-self: center;
+  justify-self: center;
+  background-color: black;
+  width: 440px;
+  height: 440px;
+}
+
+.greenSquare {
+  width: 50px;
+  height: 50px;
+  background-color: #399c50;
+  margin: 2.5px;
+}
+
+.white {
+  align-self: center;
+  justify-self: center;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 60%;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.black {
+  align-self: center;
+  justify-self: center;
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-radius: 60%;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.player1-box {
+  grid-column: 2/3;
+  width: 208px;
+  height: 50px;
+  justify-self: right;
+  align-self: right;
+  background-color: black;
+  margin: 10px;
+}
+
+.player2-box {
+  grid-column: 3/4;
+  width: 208px;
+  height: 50px;
+  justify-self: left;
+  align-self: left;
+  background-color: white;
+  border: black solid;
+  margin: 10px;
+}
+
+.player1 {
+  font-family: Futura;
+  letter-spacing: 0.5;
+  color: white;
+  margin-left: 16px;
+}
+.player2 {
+  font-family: Futura;
+  letter-spacing: 0.5;
+  color: black;
+  margin-left: 16px;
+}
+
+.button {
+  grid-column: 2/4;
+  align-self: center;
+  justify-self: center;
+  width: 208px;
+  height: 50px;
+  background-color: #cd3e56;
+  font-family: Futura;
+  font-size: 16px;
+  letter-spacing: 0.5;
+  color: white;
+  border: none;
+  margin: 24px 10px 10px 10px;
+}
+
+.playerTurn {
+  grid-column: 2/4;
+  align-self: center;
+  justify-self: center;
+  width: 440px;
+  height: 36px;
+  margin: 10px;
+}
+
+.prompt {
+  align-content: center;
+  justify-content: center;
+  color: black;
+  font-family: Futura;
+  font-size: 12px;
+  letter-spacing: 0.5;
+  margin-left: 150px;
+  margin-left: 150px;
+}
