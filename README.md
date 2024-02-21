@@ -16,8 +16,6 @@
 
 ### How The Game Looks Like
 
-![Othello Wireframe 1](/projectOthello/src/othelloDefaultStart.png)
-
 ### Technologies Used
 
 1. HTML
