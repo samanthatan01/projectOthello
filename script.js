@@ -28,7 +28,7 @@ document
     const initIndexBottom = parseInt(clickedIndex) + 8;
     for (let i = initIndexBottom; i < 65; i += 8) {
       if (player === "player1") {
-        let checkWhite = arr[i].children[0]?.classList.contains("white");
+        let checkWhite = arr[i]?.children[0]?.classList.contains("white");
         // console.log(checkWhite);
         if (checkWhite === undefined) {
           toFlipBottom = [];
@@ -39,7 +39,7 @@ document
           break;
         }
       } else {
-        let checkBlack = arr[i].children[0]?.classList.contains("black");
+        let checkBlack = arr[i]?.children[0]?.classList.contains("black");
         // console.log(checkBlack);
         if (checkBlack === undefined) {
           toFlipBottom = [];
@@ -57,7 +57,7 @@ document
     const initIndexUp = parseInt(clickedIndex) - 8;
     for (let i = initIndexUp; i < 65; i -= 8) {
       if (player === "player1") {
-        let checkWhite = arr[i].children[0]?.classList.contains("white");
+        let checkWhite = arr[i]?.children[0]?.classList.contains("white");
         // console.log(checkWhite);
         if (checkWhite === undefined) {
           toFlipUp = [];
@@ -68,7 +68,7 @@ document
           break;
         }
       } else {
-        let checkBlack = arr[i].children[0]?.classList.contains("black");
+        let checkBlack = arr[i]?.children[0]?.classList.contains("black");
         // console.log(checkBlack);
         if (checkBlack === undefined) {
           toFlipUp = [];
@@ -86,7 +86,7 @@ document
     const initIndexRight = parseInt(clickedIndex) + 1;
     for (let i = initIndexRight; i < 65; i++) {
       if (player === "player1") {
-        let checkWhite = arr[i].children[0]?.classList.contains("white");
+        let checkWhite = arr[i]?.children[0]?.classList.contains("white");
         // console.log(checkWhite);
         if (checkWhite === undefined) {
           toFlipRight = [];
@@ -97,7 +97,7 @@ document
           break;
         }
       } else {
-        let checkBlack = arr[i].children[0]?.classList.contains("black");
+        let checkBlack = arr[i]?.children[0]?.classList.contains("black");
         // console.log(checkBlack);
         if (checkBlack === undefined) {
           toFlipRight = [];
@@ -115,7 +115,7 @@ document
     const initIndexLeft = parseInt(clickedIndex) - 1;
     for (let i = initIndexLeft; i < 65; i--) {
       if (player === "player1") {
-        let checkWhite = arr[i].children[0]?.classList.contains("white");
+        let checkWhite = arr[i]?.children[0]?.classList.contains("white");
         // console.log(checkWhite);
         if (checkWhite === undefined) {
           toFlipLeft = [];
@@ -126,7 +126,7 @@ document
           break;
         }
       } else {
-        let checkBlack = arr[i].children[0]?.classList.contains("black");
+        let checkBlack = arr[i]?.children[0]?.classList.contains("black");
         // console.log(checkBlack);
         if (checkBlack === undefined) {
           toFlipLeft = [];
@@ -144,7 +144,7 @@ document
     const initIndexTopRight = parseInt(clickedIndex) - 7;
     for (let i = initIndexTopRight; i < 65; i -= 7) {
       if (player === "player1") {
-        let checkWhite = arr[i].children[0]?.classList.contains("white");
+        let checkWhite = arr[i]?.children[0]?.classList.contains("white");
         // console.log(checkWhite);
         if (checkWhite === undefined) {
           toFlipTopRight = [];
@@ -155,7 +155,7 @@ document
           break;
         }
       } else {
-        let checkBlack = arr[i].children[0]?.classList.contains("black");
+        let checkBlack = arr[i]?.children[0]?.classList.contains("black");
         // console.log(checkBlack);
         if (checkBlack === undefined) {
           toFlipTopRight = [];
@@ -173,7 +173,7 @@ document
     const initIndexTopLeft = parseInt(clickedIndex) - 9;
     for (let i = initIndexTopLeft; i < 65; i -= 9) {
       if (player === "player1") {
-        let checkWhite = arr[i].children[0]?.classList.contains("white");
+        let checkWhite = arr[i]?.children[0]?.classList.contains("white");
         // console.log(checkWhite);
         if (checkWhite === undefined) {
           toFlipTopLeft = [];
@@ -184,7 +184,7 @@ document
           break;
         }
       } else {
-        let checkBlack = arr[i].children[0]?.classList.contains("black");
+        let checkBlack = arr[i]?.children[0]?.classList.contains("black");
         // console.log(checkBlack);
         if (checkBlack === undefined) {
           toFlipTopLeft = [];
@@ -202,7 +202,7 @@ document
     const initIndexBottomRight = parseInt(clickedIndex) + 9;
     for (let i = initIndexBottomRight; i < 65; i += 9) {
       if (player === "player1") {
-        let checkWhite = arr[i].children[0]?.classList.contains("white");
+        let checkWhite = arr[i]?.children[0]?.classList.contains("white");
         // console.log(checkWhite);
         if (checkWhite === undefined) {
           toFlipBottomRight = [];
@@ -213,7 +213,7 @@ document
           break;
         }
       } else {
-        let checkBlack = arr[i].children[0]?.classList.contains("black");
+        let checkBlack = arr[i]?.children[0]?.classList.contains("black");
         // console.log(checkBlack);
         if (checkBlack === undefined) {
           toFlipBottomRight = [];
@@ -231,7 +231,7 @@ document
     const initIndexBottomLeft = parseInt(clickedIndex) + 7;
     for (let i = initIndexBottomLeft; i < 65; i += 7) {
       if (player === "player1") {
-        let checkWhite = arr[i].children[0]?.classList.contains("white");
+        let checkWhite = arr[i]?.children[0]?.classList.contains("white");
         // console.log(checkWhite);
         if (checkWhite === undefined) {
           toFlipBottomLeft = [];
@@ -242,7 +242,7 @@ document
           break;
         }
       } else {
-        let checkBlack = arr[i].children[0]?.classList.contains("black");
+        let checkBlack = arr[i]?.children[0]?.classList.contains("black");
         // console.log(checkBlack);
         if (checkBlack === undefined) {
           toFlipBottomLeft = [];
@@ -274,13 +274,35 @@ document
     flipAllArrays(toFlipBottomRight);
     flipAllArrays(toFlipBottomLeft);
 
-    if (event.target.classList.contains("greenSquare")) {
+    const checkArray = [
+      toFlipBottom,
+      toFlipUp,
+      toFlipRight,
+      toFlipLeft,
+      toFlipTopRight,
+      toFlipTopLeft,
+      toFlipBottomRight,
+      toFlipBottomLeft,
+    ];
+
+    let isValidMove = false;
+    for (let i = 0; i < checkArray.length; i++) {
+      if (checkArray[i].length > 0) {
+        isValidMove = true;
+      }
+    }
+    console.log(isValidMove);
+    console.log(checkArray);
+
+    if (event.target.classList.contains("greenSquare") && isValidMove) {
       // this step here checks for whether or not the target clicked is a valid location
       // i.e users can only click on the green squaress to place their discs
+
       if (player === "player1") {
         // after confirming that the event.target is valid, do an IF ELSE
         // if player === "player1", place a black disc by adding an innerHTML of <div> with class=black
         // else, add innerHTML of <div> with class=white to the event.target
+
         event.target.innerHTML = '<div class="black"></div>';
         document.querySelector(".prompt").innerHTML =
           "Player 2's (white) turn!";
