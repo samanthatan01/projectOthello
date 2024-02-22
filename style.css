@@ -1,6 +1,6 @@
 .container {
   position: relative;
-  top: 100px;
+  top: 50px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
@@ -52,6 +52,7 @@
   justify-self: right;
   align-self: right;
   background-color: black;
+  border: black solid;
   margin: 10px;
 }
 
@@ -68,15 +69,20 @@
 
 .player1 {
   font-family: Futura;
+  text-align: left;
   letter-spacing: 0.5;
   color: white;
   margin-left: 16px;
+  margin-right: 16px;
 }
+
 .player2 {
   font-family: Futura;
+  text-align: left;
   letter-spacing: 0.5;
   color: black;
   margin-left: 16px;
+  margin-right: 16px;
 }
 
 .button {
@@ -104,12 +110,14 @@
 }
 
 .prompt {
-  align-content: center;
-  justify-content: center;
+  align-self: center;
+  justify-self: center;
+  text-align: center;
   color: black;
   font-family: Futura;
-  font-size: 12px;
+  font-size: 16px;
   letter-spacing: 0.5;
-  margin-left: 150px;
-  margin-left: 150px;
+  margin: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
