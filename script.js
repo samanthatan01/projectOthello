@@ -303,15 +303,58 @@ document
         // if player === "player1", place a black disc by adding an innerHTML of <div> with class=black
         // else, add innerHTML of <div> with class=white to the event.target
 
-        event.target.innerHTML = '<div class="black"></div>';
+        event.target.innerHTML = '<div class="black"></div>'; // this puts a black piece down on the board
+
+        document.querySelector(".player1Count").innerHTML = document // update score after player 1 makes a move
+          .querySelector(".blackBackground")
+          .getElementsByClassName("black").length;
+        document.querySelector(".player2Count").innerHTML = document
+          .querySelector(".blackBackground")
+          .getElementsByClassName("white").length;
+
         document.querySelector(".prompt").innerHTML =
           "Player 2's (white) turn!";
         player = "player2";
       } else {
-        event.target.innerHTML = '<div class="white"></div>';
+        event.target.innerHTML = '<div class="white"></div>'; // this puts a white piece down on the board
+
+        document.querySelector(".player2Count").innerHTML = document // update score after player 2 makes a move
+          .querySelector(".blackBackground")
+          .getElementsByClassName("white").length;
+        document.querySelector(".player1Count").innerHTML = document
+          .querySelector(".blackBackground")
+          .getElementsByClassName("black").length;
+
         document.querySelector(".prompt").innerHTML =
           "Player 1's (black) turn!";
         player = "player1";
       }
+
+      // Prompt for when the game ends
+      //   function totalScoreTracker(a, b) {
+      //     let totalScore = 0;
+      //     totalScore = a + b;
+      //     if (totalScore === 64) {
+      //       if (a > b) {
+      //         document.querySelector(".prompt").innerHTML =
+      //           "Game Over - Player 1 Wins!";
+      //       } else {
+      //         document.querySelector(".prompt").innerHTML =
+      //           "Game Over - Player 2 Wins!";
+      //       }
+      //     }
+      //     totalScoreTracker(
+      //       parseInt(
+      //         document
+      //           .querySelector(".blackBackground")
+      //           .getElementsByClassName("white").length
+      //       ),
+      //       parseInt(
+      //         document
+      //           .querySelector(".blackBackground")
+      //           .getElementsByClassName("black").length
+      //       )
+      //     );
+      //   }
     }
   });
