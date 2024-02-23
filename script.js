@@ -330,31 +330,27 @@ document
         player = "player1";
       }
 
-      // Prompt for when the game ends
       //   function totalScoreTracker(a, b) {
       //     let totalScore = 0;
       //     totalScore = a + b;
       //     if (totalScore === 64) {
       //       if (a > b) {
-      //         document.querySelector(".prompt").innerHTML =
-      //           "Game Over - Player 1 Wins!";
+      //         return (document.querySelector(".playerTurn").innerHTML =
+      //           '<p class="prompt">Player 1 wins!</p>');
       //       } else {
-      //         document.querySelector(".prompt").innerHTML =
-      //           "Game Over - Player 2 Wins!";
+      //         return (document.querySelector(".playerTurn").innerHTML =
+      //           '<p class="prompt">Player 2 wins!</p>');
       //       }
       //     }
-      //     totalScoreTracker(
-      //       parseInt(
-      //         document
-      //           .querySelector(".blackBackground")
-      //           .getElementsByClassName("white").length
-      //       ),
-      //       parseInt(
-      //         document
-      //           .querySelector(".blackBackground")
-      //           .getElementsByClassName("black").length
-      //       )
-      //     );
       //   }
+      //   // Prompt for when the game ends
+      //   totalScoreTracker(
+      //     document
+      //       .querySelector(".blackBackground")
+      //       .getElementsByClassName("black").length,
+      //     document
+      //       .querySelector(".blackBackground")
+      //       .getElementsByClassName("white").length
+      //   );
     }
   });
