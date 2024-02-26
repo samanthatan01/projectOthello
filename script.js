@@ -9,7 +9,7 @@ const arr = document
 document
   .querySelector(".blackBackground") // to avoid doing document.quuerySelector for 64 elements, we do document.querySelector for the <div> element with class = blackBackground
   .addEventListener("click", function (event) {
-    let clickedIndex = event.target.getAttribute("idx");
+    const clickedIndex = event.target.getAttribute("idx");
     // console.log(arr[clickedIndex]); //--> this returns the element of the clicked green square
     //   arr[parseInt(clickedIndex) + 8].children[0].classList.contains("white") // this checks if the item's first child in the next row contains class = white
     // use of parseInt here is to convert clickedIndex from string to integer
@@ -25,232 +25,305 @@ document
 
     // check bottom
     // this converts the index of the target clicked into an integer and +8 represents starting the check from the row below target
-    const initIndexBottom = parseInt(clickedIndex) + 8;
-    for (let i = initIndexBottom; i < 65; i += 8) {
-      if (player === "player1") {
-        let checkWhite = arr[i]?.children[0]?.classList.contains("white");
-        // console.log(checkWhite);
-        if (checkWhite === undefined) {
+    if (![56, 57, 58, 59, 60, 61, 62, 63].includes(parseInt(clickedIndex))) {
+      const initIndexBottom = parseInt(clickedIndex) + 8;
+      for (let i = initIndexBottom; i < 73; i += 8) {
+        if (i > 63) {
           toFlipBottom = [];
-          break;
-        } else if (checkWhite) {
-          toFlipBottom.push(arr[i]);
-        } else {
           break;
         }
-      } else {
-        let checkBlack = arr[i]?.children[0]?.classList.contains("black");
-        // console.log(checkBlack);
-        if (checkBlack === undefined) {
-          toFlipBottom = [];
-          break;
-        } else if (checkBlack) {
-          toFlipBottom.push(arr[i]);
+        // if ([56, 57, 58, 59, 60, 61, 62, 63].includes(i)) {
+        //   toFlipBottom = [];
+        //   break;
+        // }
+        if (player === "player1") {
+          let checkWhite = arr[i]?.children[0]?.classList.contains("white");
+          console.log("checkWhite", checkWhite);
+          if (checkWhite === undefined) {
+            toFlipBottom = [];
+            break;
+          } else if (checkWhite) {
+            toFlipBottom.push(arr[i]);
+          } else {
+            break;
+          }
         } else {
-          break;
+          let checkBlack = arr[i]?.children[0]?.classList.contains("black");
+          // console.log(checkBlack);
+          if (checkBlack === undefined) {
+            toFlipBottom = [];
+            break;
+          } else if (checkBlack) {
+            toFlipBottom.push(arr[i]);
+          } else {
+            break;
+          }
         }
       }
     }
 
     // check up
     // this converts the index of the target clicked into an integer and -8 represents starting the check from the row above target
-    const initIndexUp = parseInt(clickedIndex) - 8;
-    for (let i = initIndexUp; i < 65; i -= 8) {
-      if (player === "player1") {
-        let checkWhite = arr[i]?.children[0]?.classList.contains("white");
-        // console.log(checkWhite);
-        if (checkWhite === undefined) {
+    if (![0, 1, 2, 3, 4, 5, 6, 7].includes(parseInt(clickedIndex))) {
+      const initIndexUp = parseInt(clickedIndex) - 8;
+      for (let i = initIndexUp; i >= -8; i -= 8) {
+        if (i < 0) {
           toFlipUp = [];
-          break;
-        } else if (checkWhite) {
-          toFlipUp.push(arr[i]);
-        } else {
           break;
         }
-      } else {
-        let checkBlack = arr[i]?.children[0]?.classList.contains("black");
-        // console.log(checkBlack);
-        if (checkBlack === undefined) {
-          toFlipUp = [];
-          break;
-        } else if (checkBlack) {
-          toFlipUp.push(arr[i]);
+        // if ([0, 1, 2, 3, 4, 5, 6, 7].includes(i)) {
+        //   toFlipUp = [];
+        //   break;
+        // }
+        if (player === "player1") {
+          let checkWhite = arr[i]?.children[0]?.classList.contains("white");
+          // console.log(checkWhite);
+          if (checkWhite === undefined) {
+            toFlipUp = [];
+            break;
+          } else if (checkWhite) {
+            toFlipUp.push(arr[i]);
+          } else {
+            break;
+          }
         } else {
-          break;
+          let checkBlack = arr[i]?.children[0]?.classList.contains("black");
+          // console.log(checkBlack);
+          if (checkBlack === undefined) {
+            toFlipUp = [];
+            break;
+          } else if (checkBlack) {
+            toFlipUp.push(arr[i]);
+          } else {
+            break;
+          }
         }
       }
     }
 
     // check right
     // this converts the index of the target clicked into an integer and +1 represents starting the check from the column on the right of target
-    const initIndexRight = parseInt(clickedIndex) + 1;
-    for (let i = initIndexRight; i < 65; i++) {
-      if (player === "player1") {
-        let checkWhite = arr[i]?.children[0]?.classList.contains("white");
-        // console.log(checkWhite);
-        if (checkWhite === undefined) {
+    if (![7, 15, 23, 31, 39, 47, 55, 63].includes(parseInt(clickedIndex))) {
+      const initIndexRight = parseInt(clickedIndex) + 1;
+      for (let i = initIndexRight; i < 65; i++) {
+        if ([0, 8, 16, 24, 32, 40, 48, 56].includes(i)) {
           toFlipRight = [];
-          break;
-        } else if (checkWhite) {
-          toFlipRight.push(arr[i]);
-        } else {
           break;
         }
-      } else {
-        let checkBlack = arr[i]?.children[0]?.classList.contains("black");
-        // console.log(checkBlack);
-        if (checkBlack === undefined) {
-          toFlipRight = [];
-          break;
-        } else if (checkBlack) {
-          toFlipRight.push(arr[i]);
+
+        if (player === "player1") {
+          let checkWhite = arr[i]?.children[0]?.classList.contains("white");
+          // console.log(checkWhite);
+          if (checkWhite === undefined) {
+            toFlipRight = [];
+            break;
+          } else if (checkWhite) {
+            toFlipRight.push(arr[i]);
+          } else {
+            break;
+          }
         } else {
-          break;
+          let checkBlack = arr[i]?.children[0]?.classList.contains("black");
+          // console.log(checkBlack);
+          if (checkBlack === undefined) {
+            toFlipRight = [];
+            break;
+          } else if (checkBlack) {
+            toFlipRight.push(arr[i]);
+          } else {
+            break;
+          }
         }
       }
     }
 
     // check left
     // this converts the index of the target clicked into an integer and -1 represents starting the check from the column on the left of target
-    const initIndexLeft = parseInt(clickedIndex) - 1;
-    for (let i = initIndexLeft; i < 65; i--) {
-      if (player === "player1") {
-        let checkWhite = arr[i]?.children[0]?.classList.contains("white");
-        // console.log(checkWhite);
-        if (checkWhite === undefined) {
+    if (![0, 8, 16, 24, 32, 40, 48, 56].includes(parseInt(clickedIndex))) {
+      const initIndexLeft = parseInt(clickedIndex) - 1;
+      for (let i = initIndexLeft; i < 65; i--) {
+        if ([7, 15, 23, 31, 39, 47, 55, 63].includes(i)) {
           toFlipLeft = [];
-          break;
-        } else if (checkWhite) {
-          toFlipLeft.push(arr[i]);
-        } else {
           break;
         }
-      } else {
-        let checkBlack = arr[i]?.children[0]?.classList.contains("black");
-        // console.log(checkBlack);
-        if (checkBlack === undefined) {
-          toFlipLeft = [];
-          break;
-        } else if (checkBlack) {
-          toFlipLeft.push(arr[i]);
+        if (player === "player1") {
+          let checkWhite = arr[i]?.children[0]?.classList.contains("white");
+          // console.log(checkWhite);
+          if (checkWhite === undefined) {
+            toFlipLeft = [];
+            break;
+          } else if (checkWhite) {
+            toFlipLeft.push(arr[i]);
+          } else {
+            break;
+          }
         } else {
-          break;
+          let checkBlack = arr[i]?.children[0]?.classList.contains("black");
+          // console.log(checkBlack);
+          if (checkBlack === undefined) {
+            toFlipLeft = [];
+            break;
+          } else if (checkBlack) {
+            toFlipLeft.push(arr[i]);
+          } else {
+            break;
+          }
         }
       }
     }
 
     // check top right
     // this converts the index of the target clicked into an integer and -7 represents starting the check diagonally top right of target
-    const initIndexTopRight = parseInt(clickedIndex) - 7;
-    for (let i = initIndexTopRight; i < 65; i -= 7) {
-      if (player === "player1") {
-        let checkWhite = arr[i]?.children[0]?.classList.contains("white");
-        // console.log(checkWhite);
-        if (checkWhite === undefined) {
+    if (
+      ![0, 1, 2, 3, 4, 5, 6, 7, 15, 23, 31, 39, 47, 55, 63].includes(
+        parseInt(clickedIndex)
+      )
+    ) {
+      const initIndexTopRight = parseInt(clickedIndex) - 7;
+      for (let i = initIndexTopRight; i >= -8; i -= 7) {
+        if ([0, 8, 16, 24, 32, 40].includes(i) || i < 0) {
           toFlipTopRight = [];
-          break;
-        } else if (checkWhite) {
-          toFlipTopRight.push(arr[i]);
-        } else {
           break;
         }
-      } else {
-        let checkBlack = arr[i]?.children[0]?.classList.contains("black");
-        // console.log(checkBlack);
-        if (checkBlack === undefined) {
-          toFlipTopRight = [];
-          break;
-        } else if (checkBlack) {
-          toFlipTopRight.push(arr[i]);
+        if (player === "player1") {
+          let checkWhite = arr[i]?.children[0]?.classList.contains("white");
+          // console.log(checkWhite);
+          if (checkWhite === undefined) {
+            toFlipTopRight = [];
+            break;
+          } else if (checkWhite) {
+            toFlipTopRight.push(arr[i]);
+          } else {
+            break;
+          }
         } else {
-          break;
+          let checkBlack = arr[i]?.children[0]?.classList.contains("black");
+          // console.log(checkBlack);
+          if (checkBlack === undefined) {
+            toFlipTopRight = [];
+            break;
+          } else if (checkBlack) {
+            toFlipTopRight.push(arr[i]);
+          } else {
+            break;
+          }
         }
       }
     }
 
     // check top left
     // this converts the index of the target clicked into an integer and -9 represents starting the check diagonally top left of target
-    const initIndexTopLeft = parseInt(clickedIndex) - 9;
-    for (let i = initIndexTopLeft; i < 65; i -= 9) {
-      if (player === "player1") {
-        let checkWhite = arr[i]?.children[0]?.classList.contains("white");
-        // console.log(checkWhite);
-        if (checkWhite === undefined) {
+    if (
+      ![0, 1, 2, 3, 4, 5, 6, 7, 8, 16, 24, 32, 40, 48, 56].includes(
+        parseInt(clickedIndex)
+      )
+    ) {
+      const initIndexTopLeft = parseInt(clickedIndex) - 9;
+      for (let i = initIndexTopLeft; i >= -8; i -= 9) {
+        if ([7, 15, 23, 31, 39].includes(i) || i < 0) {
           toFlipTopLeft = [];
-          break;
-        } else if (checkWhite) {
-          toFlipTopLeft.push(arr[i]);
-        } else {
           break;
         }
-      } else {
-        let checkBlack = arr[i]?.children[0]?.classList.contains("black");
-        // console.log(checkBlack);
-        if (checkBlack === undefined) {
-          toFlipTopLeft = [];
-          break;
-        } else if (checkBlack) {
-          toFlipTopLeft.push(arr[i]);
+        if (player === "player1") {
+          let checkWhite = arr[i]?.children[0]?.classList.contains("white");
+          // console.log(checkWhite);
+          if (checkWhite === undefined) {
+            toFlipTopLeft = [];
+            break;
+          } else if (checkWhite) {
+            toFlipTopLeft.push(arr[i]);
+          } else {
+            break;
+          }
         } else {
-          break;
+          let checkBlack = arr[i]?.children[0]?.classList.contains("black");
+          // console.log(checkBlack);
+          if (checkBlack === undefined) {
+            toFlipTopLeft = [];
+            break;
+          } else if (checkBlack) {
+            toFlipTopLeft.push(arr[i]);
+          } else {
+            break;
+          }
         }
       }
     }
 
     // check bottom right
     // this converts the index of the target clicked into an integer and +9 represents starting the check diagonally bottom right of target
-    const initIndexBottomRight = parseInt(clickedIndex) + 9;
-    for (let i = initIndexBottomRight; i < 65; i += 9) {
-      if (player === "player1") {
-        let checkWhite = arr[i]?.children[0]?.classList.contains("white");
-        // console.log(checkWhite);
-        if (checkWhite === undefined) {
+    if (
+      ![56, 57, 58, 59, 60, 61, 62, 63, 7, 15, 23, 31, 39, 47, 55].includes(
+        parseInt(clickedIndex)
+      )
+    ) {
+      const initIndexBottomRight = parseInt(clickedIndex) + 9;
+      for (let i = initIndexBottomRight; i < 73; i += 9) {
+        if ([32, 40, 48, 56].includes(i) || i > 63) {
           toFlipBottomRight = [];
-          break;
-        } else if (checkWhite) {
-          toFlipBottomRight.push(arr[i]);
-        } else {
           break;
         }
-      } else {
-        let checkBlack = arr[i]?.children[0]?.classList.contains("black");
-        // console.log(checkBlack);
-        if (checkBlack === undefined) {
-          toFlipBottomRight = [];
-          break;
-        } else if (checkBlack) {
-          toFlipBottomRight.push(arr[i]);
+        if (player === "player1") {
+          let checkWhite = arr[i]?.children[0]?.classList.contains("white");
+          // console.log(checkWhite);
+          if (checkWhite === undefined) {
+            toFlipBottomRight = [];
+            break;
+          } else if (checkWhite) {
+            toFlipBottomRight.push(arr[i]);
+          } else {
+            break;
+          }
         } else {
-          break;
+          let checkBlack = arr[i]?.children[0]?.classList.contains("black");
+          // console.log(checkBlack);
+          if (checkBlack === undefined) {
+            toFlipBottomRight = [];
+            break;
+          } else if (checkBlack) {
+            toFlipBottomRight.push(arr[i]);
+          } else {
+            break;
+          }
         }
       }
     }
 
     // check bottom left
     // this converts the index of the target clicked into an integer and +7 represents starting the check from diagonally bottom left of target
-    const initIndexBottomLeft = parseInt(clickedIndex) + 7;
-    for (let i = initIndexBottomLeft; i < 65; i += 7) {
-      if (player === "player1") {
-        let checkWhite = arr[i]?.children[0]?.classList.contains("white");
-        // console.log(checkWhite);
-        if (checkWhite === undefined) {
+    if (
+      ![56, 57, 58, 59, 60, 61, 62, 63, 0, 8, 16, 24, 32, 40, 48].includes(
+        parseInt(clickedIndex)
+      )
+    ) {
+      const initIndexBottomLeft = parseInt(clickedIndex) + 7;
+      for (let i = initIndexBottomLeft; i < 73; i += 7) {
+        if ([31, 39, 47, 55, 63].includes(i) || i > 63) {
           toFlipBottomLeft = [];
-          break;
-        } else if (checkWhite) {
-          toFlipBottomLeft.push(arr[i]);
-        } else {
           break;
         }
-      } else {
-        let checkBlack = arr[i]?.children[0]?.classList.contains("black");
-        // console.log(checkBlack);
-        if (checkBlack === undefined) {
-          toFlipBottomLeft = [];
-          break;
-        } else if (checkBlack) {
-          toFlipBottomLeft.push(arr[i]);
+        if (player === "player1") {
+          let checkWhite = arr[i]?.children[0]?.classList.contains("white");
+          // console.log(checkWhite);
+          if (checkWhite === undefined) {
+            toFlipBottomLeft = [];
+            break;
+          } else if (checkWhite) {
+            toFlipBottomLeft.push(arr[i]);
+          } else {
+            break;
+          }
         } else {
-          break;
+          let checkBlack = arr[i]?.children[0]?.classList.contains("black");
+          // console.log(checkBlack);
+          if (checkBlack === undefined) {
+            toFlipBottomLeft = [];
+            break;
+          } else if (checkBlack) {
+            toFlipBottomLeft.push(arr[i]);
+          } else {
+            break;
+          }
         }
       }
     }
@@ -264,6 +337,17 @@ document
         }
       }
     }
+    // }
+
+    // troubleshooting the flips
+    console.log(toFlipBottom);
+    console.log(toFlipUp);
+    console.log(toFlipRight);
+    console.log(toFlipLeft);
+    console.log(toFlipTopRight);
+    console.log(toFlipTopLeft);
+    console.log(toFlipBottomRight);
+    console.log(toFlipBottomLeft);
 
     flipAllArrays(toFlipBottom);
     flipAllArrays(toFlipUp);
@@ -330,27 +414,31 @@ document
         player = "player1";
       }
 
-      //   function totalScoreTracker(a, b) {
-      //     let totalScore = 0;
-      //     totalScore = a + b;
-      //     if (totalScore === 64) {
-      //       if (a > b) {
-      //         return (document.querySelector(".playerTurn").innerHTML =
-      //           '<p class="prompt">Player 1 wins!</p>');
-      //       } else {
-      //         return (document.querySelector(".playerTurn").innerHTML =
-      //           '<p class="prompt">Player 2 wins!</p>');
-      //       }
-      //     }
-      //   }
-      //   // Prompt for when the game ends
-      //   totalScoreTracker(
-      //     document
-      //       .querySelector(".blackBackground")
-      //       .getElementsByClassName("black").length,
-      //     document
-      //       .querySelector(".blackBackground")
-      //       .getElementsByClassName("white").length
-      //   );
+      function totalScoreTracker(a, b) {
+        let totalScore = 0;
+        totalScore = a + b;
+        if (totalScore === 64) {
+          if (a > b) {
+            return (document.querySelector(".prompt").innerHTML =
+              "Player 1 Wins!");
+          } else {
+            return (document.querySelector(".prompt").innerHTML =
+              "Player 2 Wins!");
+          }
+        }
+      }
+      // Prompt for when the game ends
+      totalScoreTracker(
+        document
+          .querySelector(".blackBackground")
+          .getElementsByClassName("black").length,
+        document
+          .querySelector(".blackBackground")
+          .getElementsByClassName("white").length
+      );
     }
   });
+
+document.querySelector(".button").addEventListener("click", function () {
+  alert("Game Over - Refresh page to restart game");
+});
