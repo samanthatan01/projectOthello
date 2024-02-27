@@ -1,6 +1,6 @@
 # Project: Othello
 
-## About The Game
+## ABOUT THE GAME
 
 <p>
 <li> Number of players required: 2
@@ -16,7 +16,7 @@
 
 <strong>CLICK TO START > </strong>[Othello](https://samanthatan01.github.io/projectOthello/).
 
-## How The Game Looks Like
+## SNIPPETS OF THE GAME
 
 <p style="text-align: center;">1. Start of game </p>
 
@@ -30,17 +30,13 @@
 
 ![Image at the end of the game](src/othello-endofgame.png)
 
-<p style="text-align: center;">4. Game instructions panel</p>
-
-![Game instructions](src/othello-instructions.png)
-
-## Technologies Used
+## TECHNOLOGIES USED
 
 1. HTML
 2. CSS
 3. JavaScript
 
-## Next Steps
+## WHAT'S NEXT
 
 Opportunities for future enhancements
 
