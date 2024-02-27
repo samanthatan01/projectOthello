@@ -16,17 +16,21 @@
 
 ### How The Game Looks Like
 
-![image of the default start page](src/othello-screenshot.png)
+![Image at the start of the game](src/othello-startofgame.png)
 
-<p>Image 1 - Start of game </p>
+<p>1. Start of game </p>
 
-![image of the page mid-game](src/othello-screenshot2.png)
+![Image mid game](src/othello-midgame.png)
 
-<p>Image 2 - Middle of game </p>
+<p>2. Middle of game </p>
 
-![image of the page end of game](src/othello-screenshot3.png)
+![Image at the end of the game](src/othello-endofgame.png)
 
-<p> Image 3 - End of game</p>
+<p>3. End of game</p>
+
+![Game instructions](src/othello-instructions.png)
+
+<p>4. Game instructions panel</p>
 
 ### Technologies Used
 
