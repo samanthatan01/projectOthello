@@ -1,6 +1,6 @@
-# Project Othello
+# Project: Othello
 
-### About The Game
+## About The Game
 
 <p>
 <li> Number of players required: 2
@@ -14,9 +14,9 @@
 <li> The winner is determined by the most number of discs on the board when the game ends.
 </p>
 
-##
+<strong>CLICK TO START > </strong>[Othello](https://samanthatan01.github.io/projectOthello/).
 
-### How The Game Looks Like
+## How The Game Looks Like
 
 <p style="text-align: center;">1. Start of game </p>
 
@@ -34,21 +34,15 @@
 
 ![Game instructions](src/othello-instructions.png)
 
-##
-
-### Technologies Used
+## Technologies Used
 
 1. HTML
 2. CSS
 3. JavaScript
 
-##
-
-### Next Steps
+## Next Steps
 
 Opportunities for future enhancements
 
 <li> Add a countdown timer for each player to make a move.
 <li> Enhance the aesthetics of the board to make it appear in alternate shades of green.
-
-##
